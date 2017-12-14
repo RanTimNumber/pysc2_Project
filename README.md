@@ -27,7 +27,7 @@ We built several [bots](https://github.com/TheFabulousFabi/pysc2_Project/tree/ma
 
 # Replays
 
-Downloadscript for replays:
+**Downloadscript for replays:**
 
 In fact, that we wanted to learn with the best replays we created a script to download 
 pro player replays from the website http://sc2replaystats.com
@@ -45,12 +45,34 @@ In addition to this there is an option to print the URLs of the replays in a txt
 
 Until further notice the work on the downloadscript is finished.
 
+
+**Data extraction:**
+
+To extract data from replays we tried to use two different programs provided by [pysc2](https://github.com/deepmind/pysc2 "pysc2"):
+* play.py
+* replay_actions.py
+However there were some issues as you can see in our progression.
+With "replay_actions.py" it is possible to put out a so called "obs"-variable, which contains the data of the match at a given time.
+As far as known it is not "subscriptable", so the output has to be searched manually for specific units.
+
 # Progression
+
+**Data extraction with replays:**
+
+* on Windows
+  - pysc2.bin.play -> crash
+  - pysc2.bin.replay_actions -> crash
+* on Linux VM
+  - pysc2.bin.play -> works
+  - pysc2.bin.replay_actions -> replay invalid
+* on Linux laptop
+  - pysc2.bin.play -> works
+  - pysc2.bin.replay_actions -> works
 
 # ToDo List
 
 * replay analysis
-  - [ ] extract data from a given state of a match
+  - [x] extract data from a given state of a match
 * optimizing the downloadscript
   - [x] reset the console after execution
   - [x] print the links into a txt-file
